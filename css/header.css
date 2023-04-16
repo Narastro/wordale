@@ -1,0 +1,30 @@
+header {
+  padding: 10px;
+  display: flex;
+  width: 98vw;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-icon {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.header-title {
+  padding-left: 5%;
+  font-size: 30px;
+  font-weight: 1000;
+  font-family: "Playfair Display", serif;
+}

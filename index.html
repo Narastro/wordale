@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Easy Wordle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-column">
+        <div class="header-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#000"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="header-title">Wordale</div>
+      <div class="header-column">
+        <div class="header-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#000"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
+            />
+          </svg>
+        </div>
+        <div class="header-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="#000"
+            class="w-6 h-6"
+          >
+            <path
+              d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75zM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 01-1.875-1.875V8.625zM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 013 19.875v-6.75z"
+            />
+          </svg>
+        </div>
+        <div class="header-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="#000"
+            class="w-6 h-6"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 00-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 00-2.282.819l-.922 1.597a1.875 1.875 0 00.432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 000 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 00-.432 2.385l.922 1.597a1.875 1.875 0 002.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349.344-.165.673-.356.985-.57.167-.114.335-.125.45-.082l1.02.382a1.875 1.875 0 002.28-.819l.923-1.597a1.875 1.875 0 00-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.614 7.614 0 000-1.139c-.016-.2.059-.352.153-.43l.84-.692c.708-.582.891-1.59.433-2.385l-.922-1.597a1.875 1.875 0 00-2.282-.818l-1.02.382c-.114.043-.282.031-.449-.083a7.49 7.49 0 00-.985-.57c-.183-.087-.277-.227-.297-.348l-.179-1.072a1.875 1.875 0 00-1.85-1.567h-1.843zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div id="timer">time: 00:00</div>
+      <div class="board-row row-0">
+        <div class="board-column" data-index="00"></div>
+        <div class="board-column" data-index="01"></div>
+        <div class="board-column" data-index="02"></div>
+        <div class="board-column" data-index="03"></div>
+        <div class="board-column" data-index="04"></div>
+      </div>
+      <div class="board-row row-1">
+        <div class="board-column" data-index="10"></div>
+        <div class="board-column" data-index="11"></div>
+        <div class="board-column" data-index="12"></div>
+        <div class="board-column" data-index="13"></div>
+        <div class="board-column" data-index="14"></div>
+      </div>
+      <div class="board-row row-2">
+        <div class="board-column" data-index="20"></div>
+        <div class="board-column" data-index="21"></div>
+        <div class="board-column" data-index="22"></div>
+        <div class="board-column" data-index="23"></div>
+        <div class="board-column" data-index="24"></div>
+      </div>
+      <div class="board-row row-3">
+        <div class="board-column" data-index="30"></div>
+        <div class="board-column" data-index="31"></div>
+        <div class="board-column" data-index="32"></div>
+        <div class="board-column" data-index="33"></div>
+        <div class="board-column" data-index="34"></div>
+      </div>
+      <div class="board-row row-4">
+        <div class="board-column" data-index="40"></div>
+        <div class="board-column" data-index="41"></div>
+        <div class="board-column" data-index="42"></div>
+        <div class="board-column" data-index="43"></div>
+        <div class="board-column" data-index="44"></div>
+      </div>
+      <div class="board-row row-5">
+        <div class="board-column" data-index="50"></div>
+        <div class="board-column" data-index="51"></div>
+        <div class="board-column" data-index="52"></div>
+        <div class="board-column" data-index="53"></div>
+        <div class="board-column" data-index="54"></div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="keyboard-row row-1">
+        <div class="keyboard-column" data-key="Q">Q</div>
+        <div class="keyboard-column" data-key="W">W</div>
+        <div class="keyboard-column" data-key="E">E</div>
+        <div class="keyboard-column" data-key="R">R</div>
+        <div class="keyboard-column" data-key="T">T</div>
+        <div class="keyboard-column" data-key="Y">Y</div>
+        <div class="keyboard-column" data-key="U">U</div>
+        <div class="keyboard-column" data-key="I">I</div>
+        <div class="keyboard-column" data-key="O">O</div>
+        <div class="keyboard-column" data-key="P">P</div>
+      </div>
+      <div class="keyboard-row row-2">
+        <div class="keyboard-column" data-key="A">A</div>
+        <div class="keyboard-column" data-key="S">S</div>
+        <div class="keyboard-column" data-key="D">D</div>
+        <div class="keyboard-column" data-key="F">F</div>
+        <div class="keyboard-column" data-key="G">G</div>
+        <div class="keyboard-column" data-key="H">H</div>
+        <div class="keyboard-column" data-key="J">J</div>
+        <div class="keyboard-column" data-key="K">K</div>
+        <div class="keyboard-column" data-key="L">L</div>
+      </div>
+      <div class="keyboard-row row-3">
+        <div class="keyboard-column wide" data-key="ENTER">ENTER</div>
+        <div class="keyboard-column" data-key="Z">Z</div>
+        <div class="keyboard-column" data-key="X">X</div>
+        <div class="keyboard-column" data-key="C">C</div>
+        <div class="keyboard-column" data-key="V">V</div>
+        <div class="keyboard-column" data-key="B">B</div>
+        <div class="keyboard-column" data-key="N">N</div>
+        <div class="keyboard-column" data-key="M">M</div>
+        <div class="keyboard-column wide" data-key="BACK">
+          <div class="back-space-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#000"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 9.75L14.25 12m0 0l2.25 2.25M14.25 12l2.25-2.25M14.25 12L12 14.25m-2.58 4.92l-6.375-6.375a1.125 1.125 0 010-1.59L9.42 4.83c.211-.211.498-.33.796-.33H19.5a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25h-9.284c-.298 0-.585-.119-.796-.33z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/index.js"></script>
+  </body>
+</html>
